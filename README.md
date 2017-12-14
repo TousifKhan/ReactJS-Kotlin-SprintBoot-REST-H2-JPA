@@ -94,21 +94,23 @@ class TodoController(private val repository: TodoRepository) {
 }
 ```
 
-## Release notes
-See [RESTEasy Spring Boot starter release notes](mds/RELEASE_NOTES.md).
 
 ## Projects
 
-  - **sample-app**: A simple Spring Boot application that exposes JAX-RS endpoints as Spring beans using RESTEasy via this RESTEasy Spring Boot starter.
-  - **resteasy-spring-boot-starter**: The RESTEasy Spring Boot Starter project.
-  - **resteasy-spring-boot-starter-test**: Integration tests for the RESTEasy Spring Boot Starter project.
+This project contains Front ent part which need Node.js and it run on 8099 port. See package.json for more details. Following commands can be used to run the project.
+
+  - **gradle build**: compile and build spring kotlin project.
+  - **gradle bootRun**: Will run SpringBoot on port 9090
+  - **nmp run webpack**: It will compile and bundle all js files into build/app.build.js
+  - **npm run dev**: This will run webpack-dev-server on port 8099
+
 
 
 ## Contributing
 You are very welcome to contribute to this Spring Boot starter!.
 
 ## Contacting us
-To contact us, please send an email to tousifkhan510@gmail.com or visit www.techzoo.org
+To contact me, please send an email to tousifkhan510@gmail.com or visit www.techzoo.org
 
 ## License
 This project is licensed under the [Apache 2 License](License.html).

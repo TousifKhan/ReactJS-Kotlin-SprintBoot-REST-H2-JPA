@@ -29,7 +29,7 @@ class App extends React.Component {
       this.setState({todos: data});
     }.bind(this))
     .catch(function(){
-      console.log('Error....');
+      console.log('[componentDidMount] Error....');
     })
   }
     
@@ -42,7 +42,24 @@ class App extends React.Component {
   }
 
   addTodo(todoItem){
-    this.state.todos.push(todoItem);
+    fetch('http://localhost:9090/api/',{
+      method: 'PUT',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(todoItem)
+    })
+    .then(function(response){
+      return response.json();
+    })
+    .then(function(data){
+      this.setState({todos: data});
+    }.bind(this))
+    .catch(function(){
+      console.log('[addTodo] Error....');
+    })
+    //this.state.todos.push(todoItem);
     this.allChecked();
   }
 
